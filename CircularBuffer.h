@@ -31,9 +31,9 @@ public:
     size_t bytes); // Number of bytes to read
 
 private:
-  size_t beg_index_;
-  size_t end_index_;
+  size_t m_beginIndex;
+  size_t m_endIndex;
   size_t size_;      // Number of bytes contained in buffer
-  size_t capacity_;  // Number of bytes allocated for buffer
+  size_t m_capacity;  // Number of bytes allocated for buffer
   char *data_;
 };
