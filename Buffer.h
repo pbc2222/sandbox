@@ -2,11 +2,11 @@
 /*
   Ring buffer 
  */
-class CircularBuffer
+class Buffer
 {
 public:
-  CircularBuffer(size_t capacity);
-  ~CircularBuffer();
+  Buffer(size_t capacity);
+  ~Buffer();
 
   // Return number of bytes in the data array
   // Retrieve the internal circular data buffer as a liniar array

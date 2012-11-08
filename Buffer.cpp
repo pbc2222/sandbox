@@ -1,8 +1,8 @@
 #include <memory.h>
 #include <stdio.h>
-#include "CircularBuffer.h"
+#include "Buffer.h"
 
-CircularBuffer::CircularBuffer(size_t capacity)
+Buffer::Buffer(size_t capacity)
   : m_beginIndex(0)
   , m_endIndex(0)
   , size_(0)
@@ -11,12 +11,12 @@ CircularBuffer::CircularBuffer(size_t capacity)
   data_ = new char[capacity];
 }
 
-CircularBuffer::~CircularBuffer()
+Buffer::~Buffer()
 {
   delete[] data_;
 }
 
-size_t CircularBuffer::retrieveDataArray(char *data)
+size_t Buffer::retrieveDataArray(char *data)
 {
   if (size_ != 0)
   {
@@ -36,17 +36,17 @@ size_t CircularBuffer::retrieveDataArray(char *data)
   return(size_);
 }
 
-size_t CircularBuffer::bytesUsed(void)
+size_t Buffer::bytesUsed(void)
 {
   return(size_);
 }
 
-size_t CircularBuffer::bytesFree(void)
+size_t Buffer::bytesFree(void)
 {
   return(m_capacity - size_);
 } 
 
-size_t CircularBuffer::write(const char *data, size_t bytes)
+size_t Buffer::write(const char *data, size_t bytes)
 {
   if (bytes == 0) return 0;
 
@@ -77,7 +77,7 @@ size_t CircularBuffer::write(const char *data, size_t bytes)
 /*
   
  */
-size_t CircularBuffer::read(char *data, size_t bytes)
+size_t Buffer::read(char *data, size_t bytes)
 {
   if (bytes == 0) return 0;
 
