@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include "Buffer.h"
 
+/* Comment line for Feature_1 branch */
+
 Buffer::Buffer(size_t capacity)
   : m_beginIndex(0)
   , m_endIndex(0)
